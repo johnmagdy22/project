@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+    
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/modernizr")
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Online Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+           
+                <li class="nav-item">
+                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
+
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+
+                </li>
+
+               
+                    <li class="nav-item">
+                        @Html.ActionLink("Categories", "Index", "Categories", new { area = "Admin" }, new { @class = "nav-link" })
+
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Products", "Index", "Products", new { area = "Admin" }, new { @class = "nav-link" })
+
+                    </li>
+                
+           
+        </ul>
+        @Html.Partial("_LoginPartial")
+    </div>
+</nav>
+
+<main role="main" class="container u-margin-top-small">
+    @RenderBody()
+</main>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
